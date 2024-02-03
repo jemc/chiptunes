@@ -1,21 +1,15 @@
 {
   "scripts": {
     "prepare": "webpack --config webpack.prod.js",
-    "dev": "webpack serve --config ./webpack.dev.js"
+    "dev": "webpack serve --config webpack.dev.js"
   },
   "prettier": {
     "semi": false,
     "trailingComma": "all"
   },
   "dependencies": {
-    "@glass/core": "github:jemc/glass.git#main&path:/modules/core",
-    "@glass/onyx": "github:jemc/glass.git#main&path:/modules/onyx"
-  },
-  "pnpm": {
-    "overrides": {
-      "@glass/core": "github:jemc/glass.git#main&path:/modules/core",
-      "@glass/onyx": "github:jemc/glass.git#main&path:/modules/onyx"
-    }
+    "@glass/core": "workspace:*",
+    "@glass/onyx": "workspace:*"
   },
   "devDependencies": {
     "fork-ts-checker-webpack-plugin": "^9.0.2",

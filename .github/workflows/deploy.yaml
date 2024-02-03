@@ -15,10 +15,14 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - uses: actions/checkout@v3
+        with:
+          submodules: 'true'
+          fetch-depth: 0
       - uses: actions/setup-node@v2.5.1
         with: { node-version: 18.x }
+      - run: ls -la glass
       - run: npm install -g pnpm@v9.0.0-alpha.1
-      - run: pnpm install
+      - run: pnpm install --frozen-lockfile
       - run: pnpm run prepare
 
       - uses: peaceiris/actions-gh-pages@v3
