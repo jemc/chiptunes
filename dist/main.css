@@ -1,0 +1,29 @@
+body {
+  background-color: #131114;
+  height: 100vh;
+  font-size: xx-large;
+}
+
+.tunes {
+  padding: 1em;
+}
+
+.tunes a {
+  color: #2a8fd7;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+}
+.tunes a::before {
+  content: '🎵 ';
+}
+.tunes a:target {
+  color: #f2a4e6;
+}
+.tunes a:target::before {
+  content: '➤ ';
+  color: #915bca;
+}
+#silence::before {
+  opacity: 0;
+}
