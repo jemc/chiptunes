@@ -28,10 +28,19 @@ Onyx.Context.setup().then((c) => {
   const changeMusic = () => {
     console.log(window.location.hash)
 
-    if (window.location.hash === "#bubble-man") {
-      playArrangement(BubbleMan)
-    } else if (window.location.hash === "#blossoming-blade") {
-      playArrangement(BlossomingBlade)
+    switch (window.location.hash) {
+      case "#silence": {
+        world.remove(musicEntity, [Onyx.ArrangementPlay])
+        break
+      }
+      case "#blossoming-blade": {
+        playArrangement(BlossomingBlade)
+        break
+      }
+      case "#bubble-man": {
+        playArrangement(BubbleMan)
+        break
+      }
     }
   }
 
