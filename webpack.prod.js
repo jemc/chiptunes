@@ -11,6 +11,7 @@ module.exports = merge.merge(common, {
       new TerserPlugin({
         terserOptions: {
           mangle: true,
+          keep_classnames: true, // necessary for AudioWorkletProcessors
         },
       }),
     ],
