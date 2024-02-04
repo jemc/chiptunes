@@ -71,11 +71,27 @@ const walkLeadL_v7_V7: Onyx.Riff = {
   gls: "    ``5     ``5     ``5     ``5 ",
 }
 
+const walkMelody1: Onyx.Riff = {
+  bpm,
+  key,
+  div: "|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ",
+  seq: "3-----  3-4-  5-  4-  3-  3-4-- 2-3-2 2-  1-- 0-----  7---- 6---",
+  oct: "5",
+}
+
+const walkMelody2: Onyx.Riff = {
+  bpm,
+  key,
+  div: "|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ",
+  seq: "5-----  5-4-3-7-  6-  5-  5-8-u-------    5-u-9-------          ",
+  oct: "5",
+}
+
 export const BubbleMan: Onyx.Arrangement = {
   voices: {
-    leadL: { timbre: 3.0, gain: 0.1, pan: -0.33 },
-    leadR: { timbre: 3.0, gain: 0.08, pan: 0.33 },
-    leadC: { timbre: 3, gain: 0.08, pan: 0.0 },
+    leadL: { timbre: 3.0, gain: 0.06, pan: -0.33 },
+    leadR: { timbre: 3.0, gain: 0.06, pan: 0.33 },
+    leadC: { timbre: 3, gain: 0.1, pan: 0.0, vibrato: -0.5, vibratoFreq: 8 },
     bass: { timbre: 1.0, gain: 0.5, pan: 0.0 },
     noise: { timbre: 0, gain: 0.08, pan: 0.0, worklet: Onyx.NESNoise },
   },
@@ -87,7 +103,14 @@ export const BubbleMan: Onyx.Arrangement = {
       bass: [mainBass_i, mainBass_v7, mainBass_i, mainBass_v7],
       noise: [mainDrums, mainDrums, mainDrums, mainDrums],
     },
+    walkWithMelody: {
+      leadC: [walkMelody1, walkMelody2],
+      leadL: [walkLeadL_i, walkLeadL_v7, walkLeadL_i, walkLeadL_v7_V7],
+      leadR: [echoBass_i, echoBass_v7, echoBass_i, echoBass_v7],
+      bass: [mainBass_i, mainBass_v7, mainBass_i, mainBass_v7],
+      noise: [mainDrums, mainDrums, mainDrums, mainDrums],
+    },
   },
 
-  loop: ["walk"],
+  loop: ["walk", "walkWithMelody"],
 }
