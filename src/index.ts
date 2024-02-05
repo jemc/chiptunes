@@ -1,8 +1,9 @@
 import { World } from "@glass/core"
 import { Onyx } from "@glass/onyx"
 
-import { BubbleMan } from "./music/BubbleMan"
 import { BlossomingBlade } from "./music/BlossomingBlade"
+import { BubbleMan } from "./music/BubbleMan"
+import { StageSelectScreen } from "./music/StageSelectScreen"
 
 const world = new World()
 world.addSystems([Onyx.ArrangementPlaySystem(world)])
@@ -39,6 +40,10 @@ Onyx.Context.setup().then((c) => {
       }
       case "#bubble-man": {
         playArrangement(BubbleMan)
+        break
+      }
+      case "#stage-select-screen": {
+        playArrangement(StageSelectScreen)
         break
       }
     }
