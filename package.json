@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "@glass/core": "workspace:*",
-    "@glass/onyx": "workspace:*"
+    "@glass/onyx": "workspace:*",
+    "worker-timers": "^7.1.2"
   },
   "devDependencies": {
     "fork-ts-checker-webpack-plugin": "^9.0.2",

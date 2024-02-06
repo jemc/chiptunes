@@ -5,15 +5,14 @@ import { BlossomingBlade } from "./music/BlossomingBlade"
 import { BubbleMan } from "./music/BubbleMan"
 import { StageSelectScreen } from "./music/StageSelectScreen"
 
+import { setInterval } from "worker-timers"
+
 const world = new World()
 world.addSystems([Onyx.ArrangementPlaySystem(world)])
 
-const tickAndKeepRunning = (timestamp: number) => {
-  world.clock.tick(timestamp)
-  requestAnimationFrame(tickAndKeepRunning)
-}
-
-requestAnimationFrame(tickAndKeepRunning)
+setInterval(() => {
+  world.clock.tick(performance.now())
+}, 500)
 
 const musicEntity = world.create()
 const playArrangement = (arrangement: Onyx.Arrangement) => {
