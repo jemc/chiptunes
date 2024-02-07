@@ -149,7 +149,7 @@ const midDrums: Onyx.Riff = {
   vol: "@86421@86421@864214 5 6 7 8 9 @ ",
 }
 
-const mid1Bass: Onyx.Riff = {
+const midBass_VI_i: Onyx.Riff = {
   bpm,
   key,
   div: "|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ",
@@ -159,7 +159,7 @@ const mid1Bass: Onyx.Riff = {
   oct: "0                 1             1",
 }
 
-const mid2Bass: Onyx.Riff = {
+const midBass_iv_VII: Onyx.Riff = {
   bpm,
   key,
   div: "|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ",
@@ -169,7 +169,7 @@ const mid2Bass: Onyx.Riff = {
   oct: "0                 1             0",
 }
 
-const mid4Bass: Onyx.Riff = {
+const midBass_iv_V7: Onyx.Riff = {
   bpm,
   key,
   div: "|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ",
@@ -179,7 +179,7 @@ const mid4Bass: Onyx.Riff = {
   oct: "0                 1             0",
 }
 
-const mid1ArpL: Onyx.Riff = {
+const midArp_VI_i: Onyx.Riff = {
   bpm,
   key,
   div: "| | | | | | | | | | | | | | | | ",
@@ -188,7 +188,7 @@ const mid1ArpL: Onyx.Riff = {
   vol: "6",
 }
 
-const mid2ArpL: Onyx.Riff = {
+const midArp_iv_VII: Onyx.Riff = {
   bpm,
   key,
   div: "| | | | | | | | | | | | | | | | ",
@@ -197,7 +197,7 @@ const mid2ArpL: Onyx.Riff = {
   vol: "6",
 }
 
-const mid4ArpL: Onyx.Riff = {
+const midArp_iv_V7: Onyx.Riff = {
   bpm,
   key,
   div: "| | | | | | | | | | | | | | | | ",
@@ -293,21 +293,21 @@ export const BlossomingBlade: Onyx.Arrangement = {
     },
     mid1: {
       leadC: [mid1LeadC],
-      leadL: [mid1ArpL],
+      leadL: [midArp_VI_i],
       leadR: [mid1LeadR],
-      bass: [mid1Bass],
+      bass: [midBass_VI_i],
       drums: [midDrums, midDrums],
     },
     mid2: {
       leadC: [mid2LeadC],
-      leadL: [mid2ArpL],
+      leadL: [midArp_iv_VII],
       leadR: [mid2LeadR],
-      bass: [mid2Bass],
+      bass: [midBass_iv_VII],
       drums: [midDrums, midDrums],
     },
     mid4: {
-      leadL: [mid4ArpL],
-      bass: [mid4Bass],
+      leadL: [midArp_iv_V7],
+      bass: [midBass_iv_V7],
       drums: [midDrums, midDrums],
     },
   },
