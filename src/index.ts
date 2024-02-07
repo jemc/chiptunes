@@ -6,6 +6,7 @@ import { BubbleMan } from "./music/BubbleMan"
 import { StageSelectScreen } from "./music/StageSelectScreen"
 
 import { setInterval } from "worker-timers"
+import { EightEyes } from "./music/EightEyes"
 
 const world = new World()
 world.addSystems([Onyx.ArrangementPlaySystem(world)])
@@ -43,6 +44,10 @@ Onyx.Context.setup().then((c) => {
       }
       case "#stage-select-screen": {
         playArrangement(StageSelectScreen)
+        break
+      }
+      case "#eight-eyes": {
+        playArrangement(EightEyes)
         break
       }
     }
