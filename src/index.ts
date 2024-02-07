@@ -1,12 +1,12 @@
 import { World } from "@glass/core"
 import { Onyx } from "@glass/onyx"
 
-import { BlossomingBlade } from "./music/BlossomingBlade"
+import { BlossomingBlade, BlossomingBladeMajor } from "./music/BlossomingBlade"
 import { BubbleMan } from "./music/BubbleMan"
 import { StageSelectScreen } from "./music/StageSelectScreen"
 
 import { setInterval } from "worker-timers"
-import { EightEyes } from "./music/EightEyes"
+import { EightEyes, EightEyesMajor } from "./music/EightEyes"
 
 const world = new World()
 world.addSystems([Onyx.ArrangementPlaySystem(world)])
@@ -38,6 +38,10 @@ Onyx.Context.setup().then((c) => {
         playArrangement(BlossomingBlade)
         break
       }
+      case "#blossoming-blade-major": {
+        playArrangement(BlossomingBladeMajor)
+        break
+      }
       case "#bubble-man": {
         playArrangement(BubbleMan)
         break
@@ -48,6 +52,10 @@ Onyx.Context.setup().then((c) => {
       }
       case "#eight-eyes": {
         playArrangement(EightEyes)
+        break
+      }
+      case "#eight-eyes-major": {
+        playArrangement(EightEyesMajor)
         break
       }
     }

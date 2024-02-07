@@ -2,6 +2,7 @@ import { Onyx } from "@glass/onyx"
 
 const bpm = 150
 const key = "G-minor"
+const keyForMajorVariant = "Ab-major"
 
 const preLeadL: Onyx.Riff = {
   bpm,
@@ -206,4 +207,20 @@ export const EightEyes: Onyx.Arrangement = {
   },
   pre: ["pre"],
   loop: ["main1", "main2", "main3", "main4", "mid1", "mid2"],
+}
+
+export const EightEyesMajor: Onyx.Arrangement = {
+  ...EightEyes,
+
+  sections: Object.fromEntries(
+    Object.entries(EightEyes.sections).map(([sectionName, section]) => [
+      sectionName,
+      Object.fromEntries(
+        Object.entries(section).map(([voiceName, riffs]) => [
+          voiceName,
+          riffs.map((riff) => ({ ...riff, key: keyForMajorVariant })),
+        ]),
+      ),
+    ]),
+  ),
 }
