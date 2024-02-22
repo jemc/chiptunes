@@ -1,7 +1,8 @@
 import { Onyx } from "@glass/onyx"
 
 const bpm = 241
-const key = "D-minor"
+const key = Onyx.Key.of("D").minor
+const keyForWeirdmerVariant = Onyx.Key.of("D#").mode("Bothian")
 
 const mainMelody1: Onyx.Riff = {
   bpm,
@@ -108,4 +109,20 @@ export const StageSelectScreen: Onyx.Arrangement = {
 
   loop: ["main1", "main1", "main3", "main4"],
   // loop: ["intro", "main"],
+}
+
+export const StageSelectScreenWeirdmer: Onyx.Arrangement = {
+  ...StageSelectScreen,
+
+  sections: Object.fromEntries(
+    Object.entries(StageSelectScreen.sections).map(([sectionName, section]) => [
+      sectionName,
+      Object.fromEntries(
+        Object.entries(section).map(([voiceName, riffs]) => [
+          voiceName,
+          riffs.map((riff) => ({ ...riff, key: keyForWeirdmerVariant })),
+        ]),
+      ),
+    ]),
+  ),
 }

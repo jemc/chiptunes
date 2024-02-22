@@ -1,7 +1,7 @@
 import { Onyx } from "@glass/onyx"
 
 const bpm = 181
-const key = "C-minor"
+const key = Onyx.Key.of("C").minor
 
 const mainDrums: Onyx.Riff = {
   bpm,

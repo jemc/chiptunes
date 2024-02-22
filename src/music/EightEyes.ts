@@ -1,8 +1,8 @@
 import { Onyx } from "@glass/onyx"
 
 const bpm = 150
-const key = "G-minor"
-const keyForMajorVariant = "Ab-major"
+const key = Onyx.Key.of("G").minor
+const keyForMajorVariant = Onyx.Key.of("Ab").major
 
 const preLeadL: Onyx.Riff = {
   bpm,

@@ -1,8 +1,9 @@
 import { Onyx } from "@glass/onyx"
 
 const bpm = 173
-const key = "Bb-minor"
-const keyForMajorVariant = "B-major"
+const key = Onyx.Key.of("Bb").minor
+const keyForMajorVariant = Onyx.Key.of("B").major
+const keyForLocrianVariant = Onyx.Key.of("D#").mode("Locrian")
 
 const introLeadL: Onyx.Riff = {
   bpm,
@@ -332,6 +333,22 @@ export const BlossomingBladeMajor: Onyx.Arrangement = {
         Object.entries(section).map(([voiceName, riffs]) => [
           voiceName,
           riffs.map((riff) => ({ ...riff, key: keyForMajorVariant })),
+        ]),
+      ),
+    ]),
+  ),
+}
+
+export const BlossomingBladeLocrian: Onyx.Arrangement = {
+  ...BlossomingBlade,
+
+  sections: Object.fromEntries(
+    Object.entries(BlossomingBlade.sections).map(([sectionName, section]) => [
+      sectionName,
+      Object.fromEntries(
+        Object.entries(section).map(([voiceName, riffs]) => [
+          voiceName,
+          riffs.map((riff) => ({ ...riff, key: keyForLocrianVariant })),
         ]),
       ),
     ]),
