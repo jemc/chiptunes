@@ -6,6 +6,8 @@ import {
   BlossomingBladeLocrian,
   BlossomingBladeMajor,
 } from "./music/BlossomingBlade"
+import { DeepDanger } from "./music/DeepDanger"
+import { SearchingSignal } from "./music/SearchingSignal"
 import { BubbleMan } from "./music/BubbleMan"
 import {
   StageSelectScreen,
@@ -51,6 +53,14 @@ Onyx.Context.setup().then((c) => {
       }
       case "#blossoming-blade-locrian": {
         playArrangement(BlossomingBladeLocrian)
+        break
+      }
+      case "#deep-danger": {
+        playArrangement(DeepDanger)
+        break
+      }
+      case "#searching-signal": {
+        playArrangement(SearchingSignal)
         break
       }
       case "#bubble-man": {
