@@ -16,6 +16,10 @@ import {
 
 import { setInterval } from "worker-timers"
 import { EightEyes, EightEyesMajor } from "./music/EightEyes"
+import {
+  Lemmings2OpeningTheme,
+  Lemmings2OpeningThemeWeirdmer,
+} from "./music/Lemmings2OpeningTheme"
 
 const world = new World()
 world.addSystems([Onyx.ArrangementPlaySystem(world)])
@@ -81,6 +85,14 @@ Onyx.Context.setup().then((c) => {
       }
       case "#eight-eyes-major": {
         playArrangement(EightEyesMajor)
+        break
+      }
+      case "#lemmings-2-opening-theme": {
+        playArrangement(Lemmings2OpeningTheme)
+        break
+      }
+      case "#lemmings-2-opening-theme-weirdmer": {
+        playArrangement(Lemmings2OpeningThemeWeirdmer)
         break
       }
     }
